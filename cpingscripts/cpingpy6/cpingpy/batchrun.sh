@@ -1,1 +1,7 @@
-while(true); do  python3 cping.py; sleep 300; done
+i=1; 
+while(i le 3); 
+    do  
+        python3 cping.py; 
+        i++; 
+        sleep 300; 
+    done
