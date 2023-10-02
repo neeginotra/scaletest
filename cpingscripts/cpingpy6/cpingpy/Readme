@@ -1,0 +1,45 @@
+Connection Time Measurement Script (cping.py)
+=============================================
+cping.py measures the connection time between a source machine and a list of target IP addresses. 
+It helps you analyze the responsiveness of different hosts and record their connection times.
+
+Prerequisites
+=============================================
+Python 3.x
+
+Input file containing target IP addresses (one per line)
+=============================================
+Create a text file named input_ips.txt in the same directory as the script. 
+Add each target IP address you want to measure, one per line.
+
+Example input_ips.txt:
+
+8.8.8.8
+10.0.0.1
+
+
+Run the script:
+=============================================
+Open a terminal and navigate to the script's directory. 
+Run the script using the following command:
+
+python3 cping.py
+
+View the results:
+=============================================
+The script will generate an output file named connection_times.txt in the same directory. 
+This file will contain the timestamp, source ip, target IP, and connection time in microseconds for each target IP address.
+
+Example connection_times.txt:
+"2023-08-08 15:31:00","192.168.1.2","8.8.8.8","5.678"
+"2023-08-08 15:32:00","192.168.1.2","10.0.0.1","-1"
+
+Connection times are in microseconds. 
+If a connection attempt fails, the connection time will be "-1".
+
+Customization
+=============================================
+You can modify the target_port variable in the script to change the port number used for the connection attempt (default is 22).
+You can modify the timeout variable in the script to change the connection timeout in seconds used for the connection attempt (default is 18).
+function measure_connection_time returns the connection create time (3 way handshake) 
+If you want to include the connection close time as well change the code to return connection_open_close_time
